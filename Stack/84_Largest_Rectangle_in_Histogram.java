@@ -2,6 +2,7 @@ package Stack;
 
 import java.util.Stack;
 
+//histogram: 直方图
 class Solution {
     public int largestRectangleArea(int[] heights) {
         // monotonic increasing stack

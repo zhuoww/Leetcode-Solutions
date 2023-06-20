@@ -1,5 +1,6 @@
 import java.util.Arrays;
 
+//For example, given the string "abc", some possible permutations are "abc", "acb", "bac", "bca", "cab", and "cba".
 class Solution {
     public boolean checkInclusion(String s1, String s2) {
 

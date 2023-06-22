@@ -16,7 +16,7 @@ class Solution {
             if (minHours <= h) {// minimize the speed
                 right = k;// k may be the answer here, cannot be skipped, so it's not k - 1
             } else {// current eating speed is too slow to finish within the given hours
-                left = k + 1;// k must not be the answer here
+                left = k + 1;// k must not be the answer
             }
         }
         return right;

@@ -10,9 +10,11 @@ class Solution {
                 (a[0] * a[0] + a[1] * a[1])));
 
         for (int[] point : points) {
-            maxHeap.offer(point);
+            maxHeap.offer(point);// each insertion operation (maxHeap.offer(point)) takes O(logk) time, and there
+                                 // are n points
             if (maxHeap.size() > k) {
-                maxHeap.poll();
+                maxHeap.poll();// maxHeap.poll() takes O(logk) time. This operation is performed at most n-k
+                               // times
             }
         }
 

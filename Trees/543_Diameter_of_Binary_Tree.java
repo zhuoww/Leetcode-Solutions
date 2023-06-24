@@ -24,20 +24,20 @@ class Solution {
     int res = 0;
 
     public int diameterOfBinaryTree(TreeNode root) {
-        traversal(root);
+        height(root);
         return res;
     }
 
     // recursively calculates the height of the left and right subtrees
-    public int traversal(TreeNode root) {
+    public int height(TreeNode root) {
         if (root == null)
             return -1;// return -1 for an empty subtree, the traversal method ensures
                       // that when calculating the height of a parent node,
                       // the height of its child subtree is correctly considered as 0
 
         // post order traversal
-        int left = traversal(root.left);
-        int right = traversal(root.right);
+        int left = height(root.left);
+        int right = height(root.right);
         res = Math.max(res, (left + right + 2)); // max diameter, (left + right + 2):to account for the edges connecting
                                                  // the nodes
 

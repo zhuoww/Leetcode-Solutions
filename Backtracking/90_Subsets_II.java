@@ -5,6 +5,9 @@ import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
+//subsetsII: contain duplicates
+//boolean[] used: mark used elements，避免树层取到duplicates
+//startIndex: avoid getting the same elements
 class Solution {
     LinkedList<Integer> path = new LinkedList<>();
     List<List<Integer>> res = new ArrayList<>();
@@ -22,7 +25,7 @@ class Solution {
             return;
 
         for (int i = startIndex; i < nums.length; i++) {
-            if (i > 0 && nums[i] == nums[i - 1] && used[i - 1] == false)// 树层去重
+            if (i > 0 && nums[i] == nums[i - 1] && used[i - 1] == false)// Tree layer deduplication
                 continue;
             path.add(nums[i]);
             used[i] = true;

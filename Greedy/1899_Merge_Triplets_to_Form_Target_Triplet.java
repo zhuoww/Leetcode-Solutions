@@ -1,6 +1,7 @@
 package Greedy;
 
 class Solution {
+    // time: O(n)
     public boolean mergeTriplets(int[][] triplets, int[] target) {
         boolean[] res = new boolean[3];
 

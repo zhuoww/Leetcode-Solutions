@@ -1,5 +1,3 @@
-package Grind75;
-
 import java.util.HashMap;
 
 class Solution {

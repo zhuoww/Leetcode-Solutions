@@ -1,5 +1,6 @@
 class Solution {
     public int maxConsecutiveAnswers(String answerKey, int k) {
+        // time: O(n)
         int l = 0;
         int r = 0;
         int count = k;

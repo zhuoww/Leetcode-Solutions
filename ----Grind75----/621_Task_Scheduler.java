@@ -1,3 +1,4 @@
+//method1
 class Solution {
     public int leastInterval(char[] tasks, int n) {
         PriorityQueue<Integer> maxHeap = new PriorityQueue<>((a, b) -> b - a);
@@ -31,5 +32,27 @@ class Solution {
         }
         return count;
 
+    }
+}
+
+// method2
+class Solution {
+    public int leastInterval(char[] tasks, int n) {
+        int[] charMap = new int[26];// store the frequency of each task
+        for (char c : tasks) {
+            charMap[c - 'A']++;
+        }
+
+        Arrays.sort(charMap);// O(nlogn)
+        int maxFrequent = charMap[25] - 1;
+        int idleSlots = maxFrequent * n;
+
+        for (int i = 24; i >= 0 && charMap[i] > 0; i--) {
+            idleSlots -= Math.min(charMap[i], maxFrequent);
+        }
+
+        idleSlots = Math.max(0, idleSlots); // make sure idleSlots is non-negative
+
+        return idleSlots + tasks.length;
     }
 }

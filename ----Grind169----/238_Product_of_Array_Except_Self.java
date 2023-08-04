@@ -54,3 +54,32 @@ class Solution {
 
     }
 }
+
+// follow up - space: O(1)
+class Solution {
+    public int[] productExceptSelf(int[] nums) {
+        if (nums == null || nums.length == 0)
+            return nums;
+        int product = 1;
+        int zeroCount = 0;
+
+        for (int num : nums) {
+            if (num == 0) {
+                zeroCount++;
+            } else {
+                product *= num;
+            }
+        }
+
+        for (int i = 0; i < nums.length; i++) {
+            if (zeroCount == 0) {
+                nums[i] = product / nums[i];
+            } else if (zeroCount == 1) {
+                nums[i] = nums[i] != 0 ? 0 : product;
+            } else {
+                nums[i] = 0;
+            }
+        }
+        return nums;
+    }
+}

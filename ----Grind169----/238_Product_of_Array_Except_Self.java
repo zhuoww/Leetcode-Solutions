@@ -1,3 +1,4 @@
+//prefix and suffix
 class Solution {
     public int[] productExceptSelf(int[] nums) {
         int[] res = new int[nums.length];
@@ -18,5 +19,38 @@ class Solution {
         }
 
         return res;
+    }
+}
+
+// division
+class Solution {
+    public int[] productExceptSelf(int[] nums) {
+        int[] res = new int[nums.length];
+        int product = 1;
+        int zeroCount = 0;
+        for (int num : nums) {
+            if (num == 0) {
+                zeroCount++;
+            } else {
+                product *= num;
+            }
+        }
+
+        if (zeroCount > 1) {
+            return res;
+        } else if (zeroCount == 1) {
+            for (int i = 0; i < nums.length; i++) {
+                if (nums[i] == 0) {
+                    res[i] = product;
+                }
+            }
+        } else {
+            for (int i = 0; i < nums.length; i++) {
+                res[i] = product / nums[i];
+            }
+        }
+
+        return res;
+
     }
 }

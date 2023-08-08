@@ -1,4 +1,4 @@
-//1
+//1 non swap
 class Solution {
     public void moveZeroes(int[] nums) {
         if (nums == null || nums.length < 2)
@@ -17,7 +17,7 @@ class Solution {
     }
 }
 
-// 2
+// 2 swap
 class Solution {
     public void moveZeroes(int[] nums) {
         if (nums == null || nums.length < 2)

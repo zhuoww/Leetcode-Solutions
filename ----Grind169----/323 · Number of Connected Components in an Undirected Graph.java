@@ -71,3 +71,49 @@ public class Solution {
         return count;
     }
 }
+
+// unionFind
+public class Solution {
+    /**
+     * @param n:     the number of vertices
+     * @param edges: the edges of undirected graph
+     * @return: the number of connected components
+     */
+    public int countComponents(int n, int[][] edges) {
+        // write your code here
+        int[] parent = new int[n];
+        int[] rank = new int[n];
+
+        for (int i = 0; i < n; i++) {
+            parent[i] = i;
+            rank[i] = 1;
+        }
+
+        int count = n;
+        for (int[] edge : edges) {
+            int a = find(edge[0], parent);
+            int b = find(edge[1], parent);
+
+            if (a == b) {
+                continue;
+            } else {
+                if (rank[b] > rank[a]) {
+                    parent[a] = b;
+                    rank[b] += rank[a];
+                } else {
+                    parent[b] = a;
+                    rank[a] += rank[b];
+                }
+                count--;
+            }
+        }
+        return count;
+    }
+
+    public int find(int x, int[] parent) {
+        if (parent[x] != x) {
+            parent[x] = find(parent[x], parent);
+        }
+        return parent[x];
+    }
+}

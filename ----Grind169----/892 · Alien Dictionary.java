@@ -32,7 +32,7 @@ public class Solution {
                     }
                     break;
                 }
-                // Handle the case where the current word is a prefix of the previous word
+                // handle the case where the current word is a prefix of the previous word
                 if (j == minLen - 1 && prev.length() > curr.length()) {
                     map.clear();
                     return;

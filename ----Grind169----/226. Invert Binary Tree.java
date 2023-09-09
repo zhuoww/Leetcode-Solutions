@@ -27,3 +27,22 @@ class Solution {
         return root;
     }
 }
+
+class Solution {
+    public TreeNode invertTree(TreeNode root) {
+        if (root == null)
+            return null;
+
+        swap(root);
+        invertTree(root.left);
+        invertTree(root.right);
+        return root;
+    }
+
+    public void swap(TreeNode node) {
+        TreeNode temp = node.left;
+        node.left = node.right;
+        node.right = temp;
+    }
+
+}

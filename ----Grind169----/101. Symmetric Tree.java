@@ -13,6 +13,8 @@
  * }
  * }
  */
+
+// dfs
 class Solution {
     public boolean isSymmetric(TreeNode root) {
         if (root == null)
@@ -36,5 +38,31 @@ class Solution {
 
         return left && right;
     }
+
+}
+
+    // bfs
+public boolean isSymmetric(TreeNode root) {
+    Queue<TreeNode> que = new LinkedList<>();
+
+    if (root == null) return true;
+    que.offer(root.left);
+    que.offer(root.right);
+
+    while (!que.isEmpty()){
+        TreeNode leftNode = que.poll();
+        TreeNode rightNode = que.poll();
+
+        if (leftNode == null && rightNode == null) continue;
+        if (leftNode != null && rightNode == null) return false;
+        if (leftNode == null && rightNode != null) return false;
+        if (leftNode.val != rightNode.val) return false;
+
+        que.offer(leftNode.left);
+        que.offer(rightNode.right);
+        que.offer(leftNode.right);
+        que.offer(rightNode.left);
+    }
+    return true;
 
 }

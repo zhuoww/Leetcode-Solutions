@@ -1,3 +1,5 @@
+import java.util.*;
+
 class RandomizedSet {
     HashMap<Integer, Integer> map;
     List<Integer> list;
@@ -34,6 +36,21 @@ class RandomizedSet {
     public int getRandom() {
         int randomNum = random.nextInt(list.size());
         return list.get(randomNum);
+    }
+
+    public static void main(String[] orgs) {
+        RandomizedSet randomSet = new RandomizedSet();
+        System.out.println(randomSet.insert(1));
+        System.out.println(randomSet.remove(2));
+        System.out.println(randomSet.insert(2));
+        System.out.println(randomSet.getRandom());
+        System.out.println(randomSet.remove(1));
+        System.out.println(randomSet.insert(2));
+        System.out.println(randomSet.insert(3));
+        System.out.println(randomSet.insert(4));
+        System.out.println(randomSet.insert(5));
+        System.out.println(randomSet.getRandom());
+
     }
 
 }

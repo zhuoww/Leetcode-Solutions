@@ -10,6 +10,9 @@
  */
 class Solution {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+        // time: O(max(N, M))--N and M are the lengths of l1 and l2, iterates through
+        // the linked lists once
+        // space: O(max(N, M))--new ListNode
         ListNode dummy = new ListNode();
         ListNode cur = dummy;
         int carry = 0;

@@ -1,5 +1,6 @@
 class Solution {
     public int trap(int[] height) {
+        // Monotonic Increasing Stack
         if (height.length <= 2)
             return 0;
         Stack<Integer> st = new Stack<>();
@@ -28,4 +29,30 @@ class Solution {
 
     }
 
+}
+
+class Solution {
+    public int trap(int[] height) {
+        // two pointers
+        if (height.length <= 2)
+            return 0;
+        int l = 0;
+        int r = height.length - 1;
+        int leftMax = height[l];
+        int rightMax = height[r];
+        int area = 0;
+
+        while (l < r) {
+            if (leftMax < rightMax) {
+                l++;
+                leftMax = Math.max(leftMax, height[l]);
+                area += leftMax - height[l];
+            } else {
+                r--;
+                rightMax = Math.max(rightMax, height[r]);
+                area += rightMax - height[r];
+            }
+        }
+        return area;
+    }
 }

@@ -28,3 +28,49 @@ class Solution {
 
     }
 }
+
+// two pointers
+class Solution {
+    public boolean backspaceCompare(String s, String t) {
+        int pointerS = s.length() - 1;
+        int pointerT = t.length() - 1;
+
+        int spaceS = 0;
+        int spaceT = 0;
+
+        while (pointerS >= 0 || pointerT >= 0) {
+            while (pointerS >= 0) {
+                if (s.charAt(pointerS) == '#') {
+                    pointerS--;
+                    spaceS++;
+                } else if (spaceS > 0) {
+                    pointerS--;
+                    spaceS--;
+                } else {
+                    break;
+                }
+            }
+
+            while (pointerT >= 0) {
+                if (t.charAt(pointerT) == '#') {
+                    pointerT--;
+                    spaceT++;
+                } else if (spaceT > 0) {
+                    pointerT--;
+                    spaceT--;
+                } else {
+                    break;
+                }
+            }
+
+            if (pointerS >= 0 && pointerT >= 0 && s.charAt(pointerS) != t.charAt(pointerT))
+                return false;
+            if ((pointerS >= 0) != (pointerT >= 0))
+                return false;
+
+            pointerS--;
+            pointerT--;
+        }
+        return true;
+    }
+}

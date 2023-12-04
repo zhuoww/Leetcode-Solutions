@@ -1,5 +1,5 @@
 /*
- * medium
+ * medium->求背包最多能装多少
  * time:O(N * S)： N is the number of elements in the input array stones. S is the sum of all elements in stones
     space:O(S)：S is the sum of all elements in stones
     1. dp[j]表示 背包总容量（所能装的总重量）是j，放进物品后，背的最大重量为dp[j]

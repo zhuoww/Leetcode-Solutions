@@ -1,4 +1,4 @@
-/*medium
+/*medium-> 求背包是否正好装满
     time:O(N * S)： N is the number of elements in the input array nums. S is the sum of all elements in nums
     space:O(S)：S is the sum of all elements in nums
  * 1. dp[j]表示 背包总容量（所能装的总重量）是j，放进物品后，背的最大重量为dp[j]

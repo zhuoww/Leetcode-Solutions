@@ -1,5 +1,6 @@
 /*medium
-    time:O(n^2);space:O(n)
+    time:O(N * S)： N is the number of elements in the input array nums. S is the sum of all elements in nums
+    space:O(S)：S is the sum of all elements in nums
  * 1. dp[j]表示 背包总容量（所能装的总重量）是j，放进物品后，背的最大重量为dp[j]
  * 2. 递推公式：dp[j] = Math.max(dp[j], dp[j - nums[i]] + nums[i]), 此题价值和重量一样
  * 3. 初始化：dp[0] = 0; 其他值初始化为最小的非负整数，不影响后面取最大值

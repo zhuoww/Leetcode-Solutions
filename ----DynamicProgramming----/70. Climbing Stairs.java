@@ -37,3 +37,22 @@ class Solution {
         return dp[2];
     }
 }
+
+/*
+ * 拓展：继续深化，一步一个台阶，两个台阶，三个台阶，直到 m个台阶，有多少种方法爬到n阶楼顶。---可用完全背包排列数
+ */
+
+class Solution {
+    public int climbStairs(int n) {
+        int[] dp = new int[n + 1];
+        dp[0] = 1;
+        for (int j = 1; j <= n; j++) {
+            for (int i = 1; i <= m; i++) {// m改成2就是此题的解法
+                if (j >= i) {
+                    dp[j] += dp[j - i];
+                }
+            }
+        }
+        return dp[n];
+    }
+}

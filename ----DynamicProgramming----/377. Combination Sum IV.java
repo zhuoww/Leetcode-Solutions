@@ -22,3 +22,5 @@ class Solution {
         return dp[target];
     }
 }
+
+// 拓展： 70题爬楼梯，一步一个台阶，两个台阶，三个台阶，直到 m个台阶，有多少种方法爬到n阶楼顶。见70.climbing stairs.java

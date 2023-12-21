@@ -1,5 +1,7 @@
 /*
  * medium
+ * time: O(log n), since the input is getting reduced by a factor of 10 in each iteration.
+ * space:O(1)
  */
 
 class Solution {

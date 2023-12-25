@@ -2,6 +2,7 @@
  * medium
  */
 
+//greedy
 //time:O(n);space:O(1)
 class Solution {
     public boolean canJump(int[] nums) {

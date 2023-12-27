@@ -21,6 +21,7 @@ class Solution {
             if (map.containsKey(diff)) {
                 res[0] = map.get(diff);
                 res[1] = i;
+                break;// if find the valid index, break
             }
             // otherwise, add the value and index of the element to the map
             map.put(nums[i], i);

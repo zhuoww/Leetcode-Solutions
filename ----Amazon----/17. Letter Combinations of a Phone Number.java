@@ -1,6 +1,7 @@
 /*
  * medium
  * backtracking
+ * time:O(4^n); space:O(4^n)
  */
 
 class Solution {

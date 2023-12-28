@@ -1,6 +1,7 @@
 /*
  * medium
- * time:O(m+n);space:O(m+n)
+ * time:O(n),n-> Maximum of lengths of l1 and l2
+ * space:O(n),n-> Maximum of lengths of l1 and l2
  */
 
 /**

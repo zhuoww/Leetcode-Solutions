@@ -1,6 +1,6 @@
 /*
  * easy
- * time:O(max(n,m)); space:O(max(n,m));
+ * time:O(min(n,m)); space:O(1)
  */
 
 /**

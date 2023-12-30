@@ -5,26 +5,28 @@
 
 class Solution {
     public int search(int[] nums, int target) {
-        int len = nums.length;
+        if (nums == null || nums.length == 0)
+            return -1;
+
         int l = 0;
-        int r = len - 1;
+        int r = nums.length - 1;
 
         while (l < r) {
             int mid = l + (r - l) / 2;
-            if (nums[mid] > nums[len - 1]) {
+            if (nums[mid] > nums[r]) {
                 l = mid + 1;
             } else {
                 r = mid;
             }
         }
 
-        int min = l;
-        if (target <= nums[len - 1]) {
-            l = min;
-            r = len - 1;
+        int smallest = l;
+        l = 0;
+        r = nums.length - 1;
+        if (target >= nums[smallest] && target <= nums[r]) {
+            l = smallest;
         } else {
-            l = 0;
-            r = min - 1;
+            r = smallest - 1;
         }
 
         while (l <= r) {
@@ -39,5 +41,4 @@ class Solution {
         }
         return -1;
     }
-
 }

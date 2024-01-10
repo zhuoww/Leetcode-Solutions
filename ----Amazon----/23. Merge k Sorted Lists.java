@@ -25,7 +25,7 @@
  */
 
 // divide-and-conquer
-// time:O(nlogk)
+// time:O(nlogk):where n is the total number of nodes across all linked lists, and k is the number of linked lists.
 // space:O(log(k)) as we use recursion (depth of the recursion tree)
 class Solution {
     public ListNode mergeKLists(ListNode[] lists) {

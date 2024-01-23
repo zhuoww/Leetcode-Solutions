@@ -10,7 +10,7 @@ class Solution {
             map.put(arr[i], map.getOrDefault(arr[i], 0) + 1);
         }
 
-        HashSet<Integer> set = new HashSet<>();
+        HashSet<Integer> set = new HashSet<>();// HashSet<Integer> unique_val = new HashSet(map.values());
         for (int val : map.values()) {
             set.add(val);
         }
